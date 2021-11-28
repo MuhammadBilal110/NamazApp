@@ -34,9 +34,9 @@ const TabNavigator = createBottomTabNavigator(
             screen: NamesofAllah,
         },
 
-        More: {
-            screen: Moreitem,
-        },
+        // More: {
+        //     screen: Moreitem,
+        // },
 
 
     },
@@ -52,9 +52,9 @@ const TabNavigator = createBottomTabNavigator(
                     case 'Qibla':
                         iconName = 'compass'
                         break;
-                    case 'More':
-                        iconName = 'more-horizontal'
-                        break;
+                    // case 'More':
+                    //     iconName = 'more-horizontal'
+                    //     break;
                     case 'Prayer':
                         iconName = 'time'
                         break;
@@ -73,21 +73,22 @@ const TabNavigator = createBottomTabNavigator(
 
                         />
                     )
-                } else if (routeName == 'More') {
-                    return (
-                        // <Image 
-                        // source={require('../Assets/more.png' 
-                        //     )}
-                        //     style={{width:'40%'}} resizeMode='contain'
-                        // />
-                        <Feather
-                            name={iconName}
-                            size={30}
-                            style={{ marginBottom: -3 }}
-                            color={focused ? 'green' : "rgba(0, 0, 0, 0.54)"}
-                        />
-                    )
                 }
+                //  else if (routeName == 'More') {
+                //     return (
+                //         // <Image 
+                //         // source={require('../Assets/more.png' 
+                //         //     )}
+                //         //     style={{width:'40%'}} resizeMode='contain'
+                //         // />
+                //         <Feather
+                //             name={iconName}
+                //             size={30}
+                //             style={{ marginBottom: -3 }}
+                //             color={focused ? 'green' : "rgba(0, 0, 0, 0.54)"}
+                //         />
+                //     )
+                // }
                 else if (routeName == 'Prayer') {
                     return (
                         <Ionicons

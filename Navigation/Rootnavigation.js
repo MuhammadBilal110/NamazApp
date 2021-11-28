@@ -1,12 +1,12 @@
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
-import QiblaStackNavigator from './Navigation'
+import MainStackNavigator from './Navigation'
 import TabNavigator from './tabNavigator'
 
 
 
 const RootStackNavigator = createSwitchNavigator({
     Qibla: {
-        screen: QiblaStackNavigator,
+        screen: MainStackNavigator,
         
         },
        

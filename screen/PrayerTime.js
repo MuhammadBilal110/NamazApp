@@ -107,93 +107,14 @@ export default class ExampleOne extends React.Component {
   callforApi(latitude, longitude) {
     axios.get(`http://api.aladhan.com/v1/calendar?latitude=${latitude}&longitude=${longitude}&method=2&date=${new Date().getDate()}&month=${new Date().getMonth() + 1}&year=${new Date().getFullYear()}`)
       .then(response => {
-        this.setState({ namazTiming: response.data.data[new Date().getDate()].timings, loader: false }, () => this.setCurrentNamaz())
+        this.setState({ namazTiming: response.data.data[new Date().getDate()].timings, loader: false })
       })
       .catch(error => {
         console.log('getting error from axios', error);
       })
   }
 
-  setCurrentNamaz = () => {
-    let { namazTiming } = this.state
-console.log('hello world set current namaz')
-    if (namazTiming.Fajr) {
-      let FajrHour = namazTiming.Fajr.split(' ')[0].split(':')[0]
-      let DhuhrHour = namazTiming.Dhuhr.split(' ')[0].split(':')[0]
-      let AsrHour = namazTiming.Asr.split(' ')[0].split(':')[0]
-      let MaghribHour = namazTiming.Maghrib.split(' ')[0].split(':')[0]
-      let IshaHour = namazTiming.Isha.split(' ')[0].split(':')[0]
-      let fajarMinutes = namazTiming.Fajr.split(' ')[0].split(':')[1]
-      let DhuhrMinutes = namazTiming.Dhuhr.split(' ')[0].split(':')[1]
-      let AsrMinutes = namazTiming.Asr.split(' ')[0].split(':')[1]
-      let MaghribMinutes = namazTiming.Maghrib.split(' ')[0].split(':')[1]
-      let IshaMinutes = namazTiming.Isha.split(' ')[0].split(':')[1]
-      let currentHour = new Date().getHours();
-      let currentMinutes = new Date().getMinutes()
-      console.log('currentHours', currentHour, 'ishahour', IshaHour)
-      if (currentHour >= FajrHour && currentHour <= DhuhrHour) {
-        if (currentHour == DhuhrHour) {
-          if (currentMinutes < DhuhrMinutes) {
-            this.setState({ isTime: 'Fajar' })
-          } else {
-            this.setState({ isTime: 'Dhuhr' })
-          }
-        } else if (currentHour < DhuhrHour) {
-          this.setState({ isTime: 'Fajar' })
-        }
-      } else if (currentHour >= DhuhrHour && currentHour <= AsrHour) {
-        if (currentHour == AsrHour) {
-          if (currentMinutes < AsrMinutes) {
-            this.setState({ isTime: 'Dhuhr' })
-          } else {
-            this.setState({ isTime: 'Asr' })
-          }
-        } else if (currentHour < AsrHour) {
-          this.setState({ isTime: 'Dhuhr' })
-        }
-      }
-      else if (currentHour >= AsrHour && currentHour <= MaghribHour) {
-        if (currentHour == MaghribHour) {
-          if (currentMinutes < MaghribMinutes) {
-            this.setState({ isTime: 'Asr' })
-          } else {
-            this.setState({ isTime: 'Maghrib' })
-          }
-        } else if (currentHour < MaghribHour) {
-          this.setState({ isTime: 'Asr' })
-        }
-      }
-      else if (currentHour >= MaghribHour && currentHour <= IshaHour) {
-        if (currentHour == IshaHour) {
-          if (currentMinutes < IshaMinutes) {
-            this.setState({ isTime: 'Maghrib' })
-          } else {
-            this.setState({ isTime: 'Ishaa' })
-          }
-        } else if (currentHour < IshaHour) {
-          this.setState({ isTime: 'Maghrib' })
 
-        }
-      }
-      else if (currentHour >= IshaHour) { //20 :  19 7 ;  6
-        console.log('first console')
-        if (currentHour == IshaHour) { 7
-          console.log('second console')
-          if (currentMinutes > IshaMinutes) {
-            console.log('final console')
-            this.setState({ isTime: 'Ishaa' })
-          }
-        }
-        else {
-          this.setState({ isTime: 'Ishaa' })
-        }
-
-      } else {
-        this.setState({ isTime: 'Ishaa' })
-      }
-
-    }
-  }
 
   componentDidMount() {
     this.getLocation();
