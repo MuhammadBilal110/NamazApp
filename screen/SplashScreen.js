@@ -38,7 +38,7 @@ class App extends React.Component {
                      {/* <Text style={{alignItems:'center', justifyContent:'center' , fontSize:20, color:'#EAEEEA' , fontWeight:'bold', marginTop:-40}}>Prayer's Time</Text> */}
                     </View>
                    
-                    <Text style={{ color:'green',justifyContent:'flex-end' , alignItems:'flex-end' , textAlign:'center' ,padding:12, backgroundColor:'white' , fontSize:16, fontWeight:'bold'}}>www.digitizevolition.com </Text>
+                    <Text style={{ color:'green',justifyContent:'flex-end' , alignItems:'flex-end' , textAlign:'center' ,padding:12, backgroundColor:'white' , fontSize:16, fontWeight:'bold'}}>Powered by Kiet</Text>
  
   
 </LinearGradient>

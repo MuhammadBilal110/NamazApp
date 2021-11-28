@@ -9,7 +9,7 @@ import {
     TextInput,
 } from 'react-native-paper';
 
-const sleep = (ms: Number) => new Promise(resolve => setTimeout(resolve, ms));
+//const sleep = (ms: Number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const Crete = ({tasbehData}) => {
     const [inputVal, setInputVal] = useState("");
