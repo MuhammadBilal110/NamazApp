@@ -1,0 +1,22 @@
+{
+  "name": "namaz",
+  "version": "1.0.0",
+  "description": "Local area",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "M.Abudullah & M.Bilal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "epxress": "0.0.1-security",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "mongoose": "^6.2.3",
+    "nodemon": "^2.0.15",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
